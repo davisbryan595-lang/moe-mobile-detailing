@@ -45,7 +45,7 @@ const Navbar = () => {
         scrolled ? "shadow-md backdrop-blur-sm" : ""
       }`}
       style={{
-        backgroundColor: scrolled ? "rgba(0,0,0,0.75)" : "rgba(0,0,0,0.6)",
+        backgroundColor: scrolled ? "hsla(var(--background), 0.85)" : "hsla(var(--background), 0.7)",
         borderBottom: "1px solid hsla(var(--accent), 0.25)", // subtle blue line
       }}
     >
