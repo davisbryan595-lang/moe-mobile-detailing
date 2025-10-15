@@ -13,6 +13,7 @@ const Navbar = () => {
     { id: "about", label: "About Us" },
     { id: "services", label: "Services" },
     { id: "pricing", label: "Pricing" },
+    { id: "gallery", label: "Gallery" },
     { id: "testimonials", label: "Testimonials" },
     { id: "contact", label: "Contact" },
   ];
@@ -58,7 +59,7 @@ const Navbar = () => {
           <img
             src={LOGO_URL}
             alt="Moe's Mobile Detailing logo"
-            className="h-10 w-10 rounded-full bg-black/60 ring-1 ring-accent/40 object-contain"
+            className="h-12 w-12 rounded-full bg-black/60 ring-1 ring-accent/40 object-contain"
           />
           <span className="font-bold text-lg tracking-wide text-white">
             Moe's Mobile Detailing
@@ -71,7 +72,7 @@ const Navbar = () => {
             <li key={link.id}>
               <button
                 onClick={() => scrollToSection(link.id)}
-                className={`text-sm font-semibold uppercase tracking-wide transition-colors text-white hover:text-accent`}
+                className={`text-sm font-semibold uppercase tracking-wide transition-colors ${active === link.id ? "text-accent" : "text-white"} hover:text-accent`}
               >
                 {link.label}
               </button>
