@@ -46,7 +46,7 @@ const Navbar = () => {
       }`}
       style={{
         backgroundColor: scrolled ? "rgba(0,0,0,0.75)" : "rgba(0,0,0,0.6)",
-        borderBottom: "1px solid rgba(59,130,246,0.25)", // subtle blue line
+        borderBottom: "1px solid hsla(var(--accent), 0.25)", // subtle blue line
       }}
     >
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
