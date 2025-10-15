@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "shadow-md backdrop-blur-sm/50" : ""
+        scrolled ? "shadow-md backdrop-blur-sm" : ""
       }`}
       style={{
         backgroundColor: scrolled ? "rgba(0,0,0,0.75)" : "rgba(0,0,0,0.6)",
