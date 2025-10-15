@@ -1,6 +1,9 @@
 import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
 
+const LOGO_URL =
+  "https://cdn.builder.io/api/v1/image/assets%2F7f3a261a364e4e158e176b65dc7b168f%2F317249e08236408e868e81f545823fa9?format=webp&width=800";
+
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
@@ -39,11 +42,11 @@ const Navbar = () => {
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "shadow-md" : ""
+        scrolled ? "shadow-md backdrop-blur-sm/50" : ""
       }`}
       style={{
-        backgroundColor: "#000", // solid black background
-        borderBottom: "1px solid rgba(255,255,255,0.1)",
+        backgroundColor: scrolled ? "rgba(0,0,0,0.75)" : "rgba(0,0,0,0.6)",
+        borderBottom: "1px solid rgba(59,130,246,0.25)", // subtle blue line
       }}
     >
       <nav className="container mx-auto px-4 h-16 flex items-center justify-between">
@@ -53,11 +56,11 @@ const Navbar = () => {
           onClick={() => scrollToSection("home")}
         >
           <img
-            src="/logo.png"
-            alt="Moe's Mobile Detailing"
-            className="h-10 w-auto"
+            src={LOGO_URL}
+            alt="Moe's Mobile Detailing logo"
+            className="h-10 w-10 rounded-full bg-black/60 ring-1 ring-accent/40 object-contain"
           />
-          <span className="text-white font-bold text-lg">
+          <span className="font-bold text-lg tracking-wide" style={{ color: "hsl(var(--metallic))" }}>
             Moe's Mobile Detailing
           </span>
         </div>
@@ -69,8 +72,8 @@ const Navbar = () => {
               <button
                 onClick={() => scrollToSection(link.id)}
                 className={`text-sm font-semibold uppercase tracking-wide transition-colors ${
-                  active === link.id ? "text-yellow-400" : "text-white"
-                } hover:text-yellow-400`}
+                  active === link.id ? "text-accent" : "text-white"
+                } hover:text-accent`}
               >
                 {link.label}
               </button>
@@ -81,11 +84,7 @@ const Navbar = () => {
         {/* CTA Button */}
         <div className="hidden md:block">
           <Button
-            className="text-black font-semibold hover:opacity-90"
-            style={{
-              background: "linear-gradient(135deg, #FFD700, #FFB700)",
-              border: "none",
-            }}
+            className="font-semibold text-primary-foreground hover:opacity-95 shadow-glow gradient-primary border-0"
             onClick={() => scrollToSection("contact")}
           >
             Get Quote
