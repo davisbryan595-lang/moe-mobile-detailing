@@ -3,7 +3,7 @@ import { Input } from "@/components/ui/input";
 import { Facebook, Instagram } from "lucide-react";
 
 const logoUrl =
-  "https://cdn.builder.io/api/v1/image/assets%2F3c98d4ac468a498ea650d71972550e62%2F528d4ef31a45457289084b368892474f?format=webp&width=800";
+  "https://cdn.builder.io/api/v1/image/assets%2F7f3a261a364e4e158e176b65dc7b168f%2F72e59671bb5749f38dbd7cc0b83451c0?format=webp&width=800";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
